@@ -52,4 +52,7 @@ console.log(z) 这边也会输出 add function
  4 4 undefind
  标准结论
 
+ 有爹找爹，没爹找Windows
 */
+
+
