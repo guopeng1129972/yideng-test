@@ -45,4 +45,7 @@ yideng();
     at <anonymous>:15:1
 
  标准结论
+ 1.严格模式不让调用window 
+ 2.当调用时
+
 */

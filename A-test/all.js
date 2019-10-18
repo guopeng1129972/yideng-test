@@ -1,27 +1,6 @@
-function C1(name) {
-    if (name) this.name = name;
-   }
-   function C2(name) {
-    this.name = name;
-   }
-   function C3(name) {
-    this.name = name || 'fe';
-   }
-   C1.prototype.name = "yideng";
-   C2.prototype.name = "lao";
-   C3.prototype.name = "yuan";
-   console.log((new C1().name) + (new C2().name) + (new C3().name)); 
 
-   
 
-- 4.写出输出值，并解释为什么。(5分)
-function test(m) {
- m = {v:5}
-}
-var m = {k: 30};
-⻚码：4/7
-test(m);
-alert(m.v);
+
 - 答：
 - 5.请写出代码执行结果，并解释为什么？（5分）
 function yideng() {
@@ -59,14 +38,7 @@ console.log(regex.test('yideng’));
 - 答：
 ⻚码：6/7
 ㊙
-- 11.继续考考你的基础怎么样？
-var yideng = function yideng(){
- yideng = 1;
- console.log(typeof yideng);
-}
-yideng();
-yideng = 1;
-console.log(typeof yideng);
+
 - 答：
 12.【仔细思考】写出如下代码执行结果，并解释为什么。(12分)
 var length = 10;

@@ -28,8 +28,11 @@ for (var i = 0; i < list_li.length; i++) {
     }
 }
 /*
+三种办法 
         console.log(list_li[i].innerHTML);
         console.log(list_li[i].innerText);
         i 定义变为let 定义
+    结论：
+    注意当涉及HTML的时候，活学活用dom的API，
 
 */
