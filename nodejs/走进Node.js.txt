@@ -1,0 +1,53 @@
+node.js 就是JavaScript的一种运行环境
+
+退出node环境
+
+1. ctrl+C *2
+2. .exit
+
+
+repl  
+
+.help 
+
+
+npm 删除一个包
+npm uninstall express
+
+
+npm help
+npm help install
+
+npm search express
+
+ //不能搜索
+
+2019年10月20日18:22:29
+Mac 电脑如何卸载 重装node
+由于在日常开发中，部分node版本不支持，因此，我们需要对已安装的node进行卸载重装，步骤如下：
+一.在终端依次输入以下命令
+ 
+sudo npm uninstall npm -g
+ 
+sudo rm -rf /usr/local/lib/node /usr/local/lib/node_modules /var/db/receipts/org.nodejs.*
+ 
+sudo rm -rf /usr/local/include/node /Users/$USER/.npm
+ 
+sudo rm /usr/local/bin/node
+ 
+sudo rm /usr/local/share/man/man1/node.1
+ 
+sudo rm /usr/local/lib/dtrace/node.d
+
+
+全局安装
+安装位置
+全局安装命令区别是-g 或者是--global。安装到全局环境中，包安装在Node安装目录下的node_modules文件夹中，一般是在Users用户名AppDataRoaming目录下。
+查看全局安装目录命令 npm root -g
+
+本地安装
+安装位置
+
+npm install gulp 或 npm install gulp --save-dev
+--save-dev的含义是把安装包的信息写入package.json文件的devDependencies字段，包安装在指定在node_module中。
+例如我这个项目的package.json文件里有这些模块

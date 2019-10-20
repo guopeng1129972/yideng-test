@@ -173,3 +173,42 @@ groups mac
 显示⽤用户详细资料料
 finger mac
 */
+
+/*
+  查看文件
+*/
+/*
+cat 
+more 
+*/
+/*
+对比文件
+*/
+/*
+diff file1 file2
+对比2个文件的差异点
+*/
+
+# 加载任务, -w选项会将plist文件中无效的key覆盖掉，建议加上
+$ launchctl load -w com.demo.plist
+
+# 删除任务
+$ launchctl unload -w com.demo.plist
+
+# 查看任务列表, 使用 grep '任务部分名字' 过滤
+$ launchctl list | grep 'com.demo'
+
+# 开始任务
+$ launchctl start  com.demo.plist
+
+# 结束任务
+$ launchctl stop   com.demo.plist
+
+
+查看目前的进程 
+netstat
+关闭进程
+kill
+如何查找主进程
+1.查找进程后边带有master后缀的
+2.查看pid 比较小的一般是主进程

@@ -1,23 +1,7 @@
 
 
 
-- 答：
-- 5.请写出代码执行结果，并解释为什么？（5分）
-function yideng() {
- console.log(1);
-}
-(function () {
- if (false) {
- function yideng() {
- console.log(2);
- }
- }
- yideng();
-})();
-- 答：
-- 6.请用一句话算出0-100之间学生的学生等级，如90-100输出为1等生、80-90为2等
-生以此类推。不允许使用if switch等。（10分）
-- 答：
+
 ⻚码：5/7
 ㊙
 - 7.请用一句话遍历变量a。(禁止用for 已知var a = “abc”)(10分)

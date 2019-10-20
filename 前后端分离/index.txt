@@ -1,0 +1,16 @@
+1.MVC模式
+系统内
+1.model 模型
+2.view 视图
+3.controller 控制器
+
+4.用户
+
+MVP模式
+
+MVVM
+
+M V VM 
+涉及框架
+VUE
+

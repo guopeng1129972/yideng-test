@@ -6,6 +6,7 @@ var m = {k: 30};
 test(m);
 alert(m.v);
 
+console.log("")
 /*
 结论：
 1.
