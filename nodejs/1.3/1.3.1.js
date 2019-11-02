@@ -52,4 +52,5 @@ myEmitter.on('event', function secondListener(arg1, arg2) {
 触发
 myEmitter.emit('event', 1, 2, 3, 4, 5);
 
+
 */
