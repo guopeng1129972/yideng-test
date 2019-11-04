@@ -27,6 +27,17 @@ for (var i = 0; i < list_li.length; i++) {
 
     }
 }
+
+for (var i = 0; i < list_li.length; i++) {
+
+        (function  (i) {
+            list_li[i].onclick = function () {
+                console.log(i + 1);}
+        })(i)
+
+
+    }
+
 /*
 三种办法 
         console.log(list_li[i].innerHTML);
