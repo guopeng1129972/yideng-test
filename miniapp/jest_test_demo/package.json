@@ -1,11 +1,26 @@
 {
   "name": "jest_test_demo",
   "version": "1.0.0",
-  "description": "",
+  "description": "一个jest的应用 npm install --save-dev jest sudo cnpm install --save-dev jest 安装jest",
   "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest",
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/plugin-transform-runtime": "^7.6.2",
+    "@babel/preset-env": "^7.7.1",
+    "babel-core": "^6.26.3",
+    "babel-jest": "^24.9.0",
+    "babel-preset-env": "^1.7.0",
+    "jest": "^24.9.0",
+    "regenerator-runtime": "^0.13.3"
+  },
+  "dependencies": {
+    "@xsl/utils": "^1.2.6"
+  }
 }

@@ -30,13 +30,16 @@ app.use(express.static('public'));
 app.get('/', function (req, res) {
     res.send("hello world!");
 })
-app.get('/index', function (req, res) {
+app.get('/index', function (req, res, next) {
     res.sendFile(__dirname + "/views/" + "index.html");
 
 })
-app.post('/index', urlencodedParser, function (req, res) {
-    var wd = req.body.username;
+app.post('/index', urlencodedParser, function (req, res, next) {
+    console.log("ok");
+    next()
     // res.sendFile(__dirname + "/views/" + "index.html");
+}, function (req, res) {
+    var wd = req.body.username;
     res.redirect("https://www.baidu.com/s?wd=" + wd);
 })
 var server = app.listen(8081, function () {
