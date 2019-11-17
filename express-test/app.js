@@ -30,10 +30,12 @@ app.use(express.static('public'));
 app.get('/', function (req, res) {
     res.send("hello world!");
 })
-app.get('/index', function (req, res, next) {
+app.get('/index', function (req, res) {
     res.sendFile(__dirname + "/views/" + "index.html");
 
 })
+
+
 app.post('/index', urlencodedParser, function (req, res, next) {
     console.log("ok");
     next()

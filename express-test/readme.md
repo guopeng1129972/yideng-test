@@ -20,6 +20,7 @@ sodu npm install express --save
 安装supervisor
 sudo npm install supervisor -g
 
+supervisor app.js
 访问目录
 http://localhost:8081/?user=admin&password=123
 应用实例，访问地址为 http://:::8081
@@ -31,3 +32,6 @@ http://localhost:8081/?user=admin&password=123
 1.安装express  //需要先init 环境
 2.app.listen 建立简单的服务器 监听1各端口
 3.app.get 设置基础的路由
+
+
+错误处理 log4j
