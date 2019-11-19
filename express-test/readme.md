@@ -35,3 +35,6 @@ http://localhost:8081/?user=admin&password=123
 
 
 错误处理 log4j
+
+
+ sudo npm install swig -save

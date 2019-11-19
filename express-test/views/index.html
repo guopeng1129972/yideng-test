@@ -1,19 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" type="text/css" href="stylesheets/index.css">
-    <title>test</title>
-</head>
-<body>
-    hello
-    <form action="/index" method="post">
-        <input type="text" name="username" />
-        <input type="submit" value="submit" name="submit" />
-        
-    </form>
-    <script type="text/javascript" src="script/index.js"></script>
-</body>
-</html>
+{% extends 'layout.html' %}
+ 
+{% block title %}index {{title}} {% endblock %}
+ 
+{% block head %}
+<link rel="stylesheet" href="stylesheets/index.css">
+{% endblock %}
+ 
+{% block content %}
+<p>这是我填充的内容</p>
+{{data}}
+{% endblock %}
+{% block script %}
+<script type="text/javascript" src="script/index.js"></script>
+{% endblock %}
