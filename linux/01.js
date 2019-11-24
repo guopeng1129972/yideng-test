@@ -4,6 +4,7 @@ linux 补充课程
 /*
 1.登录ssh
 ssh root@192.168.1.1
+ssh -p 22 root@111.229.17.156
 输入密码
 password:
 密文

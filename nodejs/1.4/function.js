@@ -15,7 +15,7 @@ function myHttp(req, res) {
     res.writeHead("200", {
         "Content-Type": "text/plain"
     });
-    res.write("hello,world!!!!");
+    res.write("牛逼啊，兄弟!!!!");
     res.end();
 }
 
