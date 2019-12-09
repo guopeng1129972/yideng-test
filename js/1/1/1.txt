@@ -1,0 +1,77 @@
+数据类型
+typeof 是一个操作符，可以不用带小括号
+
+
+
+typeof alert
+return function
+
+typeof null 
+
+return object
+
+声明
+var 
+
+如果不对变量设置类型，就会根据值去读取类型 var
+
+在函数定义时，不建议使用new关键字创建的函数，因为这样是在执行阶段创建的函数
+
+argument
+类数组对象；形参合计
+
+function foo(){return arguments}
+undefined
+foo(1,2,3);
+Arguments(3) [1, 2, 3, callee: ƒ, Symbol(Symbol.iterator): ƒ]0: 11: 22: 3callee: ƒ foo()length: 3Symbol(Symbol.iterator): ƒ values()__proto__: Object
+总结：可以根据下标去用，但是这不是签名的函数返回的argument内容，
+相当于是envelope下的一个函数的定义，
+rest
+function foo2(a,b,...args){return args}
+undefined
+foo2(1,2,3);
+[3]
+function foo2(...args){return args}
+undefined
+foo2(1,2,3);
+(3) [1, 2, 3]
+显而易见，rest对比argument的使用返回的是什么
+defult
+
+对象
+对象在JavaScript中是键值对
+
+构造函数
+构造函数的区别在于用new调用
+函数返回值
+显示调用 直接输return 返回return
+没有调用 在js中会返回undefined
+new 的范围类型，如果返回类型
+
+prototype
+
+this
+作用域
+1，我是谁；我有那些马仔
+
+call & apply
+改作用域
+用另一种方式来调用
+Function.prototype.bind
+改作用域，创建一个新的作用域副本
+function fn(){
+    this.i=0;
+    setInterval(function(){
+        console.log(this.i++)
+    }.bind(this),500)
+}
+
+fn()
+通过bind保留this的作用域范围
+
+()=>{}
+
+this 表示运行时的作用域，是可以被修改的
+但如果使用箭头函数表示，中的this是不会被修改的
+
+
