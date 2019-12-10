@@ -57,6 +57,9 @@ this
 call & apply
 改作用域
 用另一种方式来调用
+function isNumber(obj){
+     return Object.prototype.toString.call(obj)=="[Object Number]";
+}
 Function.prototype.bind
 改作用域，创建一个新的作用域副本
 function fn(){

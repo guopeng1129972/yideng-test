@@ -17,3 +17,7 @@ function fn(){
 
 fn()
 
+function isNumber(obj){
+     return Object.prototype.toString.call(obj)=="[Object Number]";
+}
+
