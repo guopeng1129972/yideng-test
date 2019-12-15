@@ -1,0 +1,58 @@
+Q1:判断是否为数组的方法？
+R1:
+1.Array.isArray(obj)
+2.Object.prototype.toString.call(obj)='[Object Array]'
+Q2:JS延迟加载的方法？
+R2:
+1.setTimeout
+setTimeout(() => {
+	window.location.reload();
+}, 1000);
+2.ajax异步请求 async 
+3.HTML5 为 <script>标签定义了 async属性。
+<script src="test1.js" async></script>
+4.放在最后加载JS
+Q3:如题，代码返回什么
+console.log(typeof fn)
+function fn(){}
+var fn;
+R3:
+function;//返回名称为function
+Q4: 如题，代码返回什么
+var name="a";
+(function(){
+    console。log(a);
+    if(typeof name === 'undefined'){
+        var name= "jack"
+        console.log("name is jack")
+    }else{
+        console.log("name is a")
+    }
+})()
+R4:
+jack
+name的类型为string
+Q5:编写一个b继承a的方法
+R5:
+Q6:linux服务器安装git
+R6:
+https://blog.csdn.net/jsboy123/article/details/80617231
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
