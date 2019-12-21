@@ -1,0 +1,24 @@
+{
+  "name": "spa-webpack",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack --mode development",
+    "prod": "webpack --mode production"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "css-loader": "^3.4.0",
+    "style-loader": "^1.1.1",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10",
+    "webpack-deep-scope-plugin": "^1.6.2"
+  },
+  "dependencies": {
+    "css-loader": "^3.4.0",
+    "lodash-es": "^4.17.15"
+  }
+}
