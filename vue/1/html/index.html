@@ -1,12 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>test</title>
+    <title>vue</title>
+    <script src="../lib/vue.js"></script>
 </head>
+
 <body>
-    
+    <div id="app">
+        {{message}}
+    </div>
+
+    <script>
+        const data = {
+            message: "this is message",
+
+        }
+        const app = new Vue({
+            el: "#app",
+            data: data,
+            beforeCreate: function () {
+                console.group("beforeCreate创建前状态");
+                console.log("el       " + this.$el);
+                console.log("data     " + this.$data);
+                console.log("message  " + this.message);
+
+            },
+            created: function () {
+                console.group("created创建前状态");
+                console.log("el       " + this.$el);
+                console.log("data     " + this.$data);
+                console.log("message  " + this.message);
+
+            },
+            beforeMount: function () {
+                console.group("beforeMount创建前状态");
+                console.log("el       " + this.$el);
+                console.log("data     " + this.$data);
+                console.log("message  " + this.message);
+
+            },
+            
+        });
+        app.$watch("message",function(newvalue,oldvalue){
+            console.log(newvalue,oldvalue)
+        })
+    </script>
 </body>
+
 </html>
