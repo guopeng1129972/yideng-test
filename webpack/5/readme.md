@@ -27,6 +27,7 @@ tree shake js,css
 
 
 npm cache clean --force
+清除
 
 npm install
 
