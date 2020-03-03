@@ -1,0 +1,13 @@
+/*我的方法，好像没什么问题，但是还是不能运行，控制台可以,
+但是这样不是用es6的方法去实现的，所以不能通过
+const increment = (number, value) => number + (value || 1);
+
+console.log(increment(5, 2)); // returns 7
+console.log(increment(5)); // returns 6
+*/
+
+//es6 中用=表示默认值
+const increment = (number, value = 1) => number + value;
+
+console.log(increment(5, 2)); // returns 7
+console.log(increment(5)); // returns 6

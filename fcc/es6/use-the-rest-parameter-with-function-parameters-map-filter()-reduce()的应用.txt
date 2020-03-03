@@ -1,0 +1,28 @@
+/*  map(), filter() and reduce() 在es6中怎么用，还是个问题
+const sum = (...args) => {
+ return args.reduce((a,b)=>{a+b},0);
+}
+
+1. Filter()
+
+创建一个新的array，过滤命中条件的元素
+
+2. Map()
+
+创建一个新的array，将每个元素都按输入的条件进行变更
+
+3. Reduce()
+
+迭代的减少array内的元素数量
+
+const arr = [1, 2, 3, 4, 5]
+arr.filter(a => a % 2 === 0) //新array [2, 4]
+arr.map(a => a = a  * a) // 新array [1, 4, 9, 16, 25]
+arr.reduce((num1, num2) => num1 + num2) // [15]
+
+*/
+const sum = (...args) => {
+  return args.reduce((a, b) => a + b, 0);
+}
+console.log(sum(1, 2, 3)); // 6
+console.log(sum(1, 2, 3)); // 6

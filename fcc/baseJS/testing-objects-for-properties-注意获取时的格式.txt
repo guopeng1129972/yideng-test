@@ -1,0 +1,19 @@
+// Setup
+var myObj = {
+  gift: "pony",
+  pet: "kitten",
+  bed: "sleigh"
+};
+
+function checkObj(checkProp) {
+  // Your Code Here
+if(myObj.hasOwnProperty(checkProp)){
+  //注意这里，引用的时候不能用点，因为那样不行，我理解是去
+  // 找下面的属性去了  像这样myObj.checkProp
+  return myObj[checkProp];
+}else{
+  return "Not Found";
+}}
+
+// Test your code by modifying these values
+checkObj("gift");
