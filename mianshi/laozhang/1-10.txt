@@ -1,0 +1,25 @@
+html篇
+1.doctype是干嘛的有什么作用？
+于html之前，告知浏览器以什么标准解析，
+2，行内元素，块级元素，空元素，不用的元素
+span i 
+div H1-H6,
+br hr img 
+center,font
+引入css的link于@import区别
+1.link用于html引用css,可以设置rel,
+import用于css间的引用，并且会后于html加载
+为什么要用语义化？
+1.什么标签做什么事情，比较规范
+2.有利于SEO爬虫分析
+3.也有利于人来理解
+关于浏览器内核？
+分为渲染引擎于js引擎
+渲染引擎主要处理文件渲染，比如加载html,xml,res等处理浏览器于机器的
+交互的内容，连接打印机，处理这些元素的，声音图像
+JS引擎主要是解析JavaScript脚本，控制这些元素，实现动态的效果显示
+常见的浏览器内核？
+webkit chrom(Blink,为webkit的分支)，v8引擎
+trident（MSHTML）IE内核
+html5有哪些新标签？移除了哪些？如何处理兼容？如何区分？
+canvas，video，audio，localStorage,sessionStorage
