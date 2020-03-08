@@ -1,39 +1,15 @@
-import React,{Fragment} from 'react';
+import React, { Fragment } from 'react';
 import logo from './logo.svg';
 import './assets/css/App.css';
 import { render } from 'react-dom';
+import Component1 from "./assets/components/Component1.js";
 // 根组件  App()是个函数组件：通过函数来创建的组件
-function User(user) {
-  return(
-    <div >
-     <p>{user.name}----{user.age}</p>
-    </div>
-  );
-}function Component1() {
-  const mydiv= "我是div";
-  const mystyle={
-    color:'green',
-    fontSize:'13px'
-  }
-  function clickHander(){
-    console.log("点击触发了");
-  }
-  const user={name:"guopeng",age:"25"}
-  return (
-    <>
-    <div style={{color:'green',fontSize:'13px'}} title={mydiv} className="App" tabIndex='1' dataid='1'>
-    <h2>hello world!{1>2?mystyle:mydiv}</h2>
-      <p>123</p>
-  <button onClick={clickHander}>{mydiv}</button>
-    <User {...user} />
-    </div>
-    </>
-  );
-}
+
+
 function App() {
   return (
     <>
-    <Component1/>
+      <Component1 />
     </>
   );
 }

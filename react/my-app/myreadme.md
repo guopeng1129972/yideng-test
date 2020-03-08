@@ -154,7 +154,8 @@ function User(user) {
   虚拟DOM与非dom对象
 
   什么是虚拟dom?
-  是react的一个亮点，底层做批处理，diff算法处理，
+  讲jsx转换着对象键值对的形式
+  是react的一个亮点，底层做批处理，diff算法处理，尽可能的减少dom操作
   dom的操作成本高
 
   return 的内容，
@@ -166,3 +167,160 @@ function User(user) {
   );
 }
 
+非dom属性以及如何使用
+dangerousSetInnerHTML ===innerHTML的替代方案
+引用方式
+<div dangerouslySetInnerHTML={{__html:'<p>我是插入的html</p>'}}></div>
+ref
+不能在函数组件上使用，但是可以在函数内部使用，也可以转意为class组件
+const inputRef=React.createRef();
+  <input type='text' ref={inputRef} />
+
+  console.log("点击触发了",inputRef);
+    inputRef.current.focus();
+    这个就是创建一个input的ref，点击触发，到input输入框上
+key
+提高渲染性能，唯一标志，渲染数组
+
+
+*****************三******
+props(属性)介绍与作用
+什么是props
+组件 props state
+如何使用
+props:对外的接口，以及传入的数据，只读属性（无论函数组件还是类组件，因为react数据单向的，因为组件是需要复用的）
+可以借助state的方法间接修改，但是本质上props没有修改的
+定义方式划分
+函数组件 无状态组件，性能高于函数组件
+类组件 有state 有生命周期  有状态组件
+1在class组件中使用props
+ render(){
+    const {name,age}=this.props;
+  return (
+    <div>
+     <h2>这是一个子组件</h2>
+     <p>{name}----{age}</p>
+    </div>
+  )
+}
+1.1 在render函数中，通过定义常量，接收this传来的props
+2在父组件中通过对象传入
+const user = { name: "guopeng", age: "25" }
+ <Footer {...user} ref={useRef} />
+3.定义完组件，设置组件props默认值
+User.dafultProto={
+  age:"18"
+}
+
+4.通过修改 state间接修改props（类组件）
+  // constructor(props) 相当于构造器函数，如果没有声明，会默认添加
+  constructor(props){
+    //super(props) ES6实现继承，改编this的固定写法
+    super(props);
+    this.state ={
+      name1:props.name +"www", 
+    }
+  }
+5.react es6的类组件中是不默认绑定this的，需要在constructor中绑定
+  constructor(props){
+    //super(props) ES6实现继承，改编this的固定写法
+    super(props);
+    // 组件内部的状态为 setState
+    this.state ={
+      name1:props.name +"www", 
+      count:0
+    }
+    this.handleAdd=this.handleAdd.bind(this);
+  }
+6.直接写回调表达式（）里的内容
+     handleAdd(){
+    console.log("this绑定",this)
+    this.setState(state=>({
+      count:++state.count
+    }))
+  }
+
+  事件监听，this的绑定
+  this
+    与执行上下文有关系
+    函数调用     严格模式 指向undefined 非严格模式 指向window对象
+    作为方法调用  谁到用就指向谁
+    call,apply方法调用，指向第一个参数
+  react 中创建class组件，不会自动绑定this，需要手动绑定
+  this.handleAdd=this.handleAdd.bind(this);
+  主要是因为es6中创建class组件的方法问题
+  this的4种绑定方式
+  1.在constructor种通过bind方法绑定
+   constructor(props){
+     ..///....
+    this.handleAdd=this.handleAdd.bind(this);
+    ..///....
+  2.定义方法时，通过箭头函数定义，（因为箭头函数定义时，就是绑定在创建它的对象上）
+  handleAdd(){
+    ..///....
+  }
+  handleAdd=() =>{
+    ..///....
+  }
+  3.直接绑定在jsx的元素上，通过bind方法
+  4.直接绑定在jsx的元素上，通过箭头函数
+  不能直接绑定在jsx上（3，4），这样会触发rander函数重新生成，影响 
+
+7.子组件到父组件的传值
+props 接收任意值 参数，在父组件中定义方法，传入到子组件的props，返回到父组件
+定义方法
+  function getChildData(data){
+      console.log("child data",data)
+  }
+  传入子组件 getChildData={getChildData}  
+<Footer getChildData={getChildData} {...user} ref={useRef} />
+子组件中在countructor中赋值，或者在方法中定义调用，方法需要绑定this
+this.props.getChildData(this.state.count);
+
+#6 state(状态)介绍与应用
+什么是state?
+props 对外的接口  只读行
+state 组件内部的状态（state改变就会呈现不同的UI显示）可以修改
+通过调用setState的方式去改变，不能直接state.状态 去改变
+特点：
+setState异步更新，不会立马更新，批量延时更新，
+react控制处理程序（onClick,onChange,onBu） 生命周期钩子函数 不会同步更新state
+setState同步更新，原生js绑定事件 seTimeout
+
+如何使用？
+1.在this.state中添加isShou的键值
+      this.state ={
+        name1:props.name +"www", 
+        count:0,
+        isShow:true,
+      }
+
+2.定义方法，注意定义是赋值要通过键值对
+ handleClick= ()=>{
+        this.setState({isShow:!this.state.isShow})
+    }
+3.render中修改dom
+ {this.state.isShow?<h1>这是一个子组件 {name}</h1>:""}
+  <button onClick={this.handleClick} >点击切换显示子组件</button>
+1.修改state的两种方式，
+1，键值对赋值
+ {this.state.isShow?<h1>这是一个子组件 {name}</h1>:""}
+2，通过函数赋值
+ this.setState(state=>({
+        count:++state.count
+      })) 
+//基于当前state进行计算，保证拿到的state一定是最新的，用函数的方法绑定
+组件的state如何去划分?
+state props 影响UI显示
+原则
+ 1.组件尽量减少状态的使用
+  UI渲染，数据展示，没有复杂交互 使用prpos，function 函数组件
+  无状态组件 UI组件 函数式组件 纯函数 无交互 无数据逻辑的展示
+ 2.随着时间产生变化的数据 有交互 是要用到state class组件
+ props 与state的区别
+ 相同点：
+ 组件内部数据，js对象，保存信息，控制组件形态 ui上
+ 不同点：
+ props:父组件传入的 只读的（不能直接修改，修改需要使用state，但应该也是没有修改）
+用于组件之间数据交互 this.props props访问
+ state:可读可写 用于组件内部 私有变量 使用state来跟踪状态（控制元素的显示隐藏） 修改调用setState方法修改
