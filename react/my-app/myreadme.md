@@ -324,3 +324,68 @@ state props 影响UI显示
  props:父组件传入的 只读的（不能直接修改，修改需要使用state，但应该也是没有修改）
 用于组件之间数据交互 this.props props访问
  state:可读可写 用于组件内部 私有变量 使用state来跟踪状态（控制元素的显示隐藏） 修改调用setState方法修改
+
+ #7react  生命周期
+ class
+ 挂载阶段
+    constructor(props)
+      初始化操作，state this绑定
+    componentWillMount
+      组件即将挂载，render之前调用
+      只会调用一次
+      很少使用
+      调用setSate 不会引起重新渲染
+      使用同步的setState 不会触发额外的render处理
+      16.3 弃用
+      会产生副作用
+    render
+    唯一必要方法，不能省略，返回一个react元素（state props）
+    不负责组件的实际渲染工作，只是返回一个UI的描述（jsx）,实际的渲染工作
+    由react完成
+    注意：
+        必须是一个纯函数，在这里不能改变state，setState
+        不能执行有任何副作用的操作
+    作用：
+        计算props/state 返回对应的结果（jsx）
+        React.createElement jsx 转换为 vDOM对象模型
+
+    componentDidMount
+      组件挂载完成触发，并且只会调用一次，获取真实的dom
+      向服务器请求数据，
+      1，可以确保获取到的数据时，组件已经处于挂载状态，
+          直接操作dom，初始化第三方库也是可以的
+      2.保证在任何情况下，只会调用一次，不会发送多余的数据请求
+      只能在浏览器端调用（因为服务端不可能产生dom树）
+      setState 会引起组件重新渲染
+      作用
+          数据可以获取到，真实dedom也可以获得
+          可以进行数据请求，进行数据修改
+          操作真实dom，第三方库的实例化
+
+
+ 更新阶段
+    componentWillReceiveProps(nextProps)
+        props引起的组件更新过程this.setState 不会触发
+        只要父组件的render函数被调用，无论父组件传给子组件
+        的props有没有改变，都会触发此函数
+    shouldComponentUpdate （false，默认返回值，比较重要，用于提高性能）
+        通知react组件是否更新，有权利组织更新，
+        尽量遵循默认行为，状态改变，组件就会被重新渲染
+        要求必须有返回值
+        减少组件不必要的渲染，提高性能
+        不能调用setState（要调用在componentWillReceiveProps）
+    componentWillUpdate(nextProps,nextState)
+        不能调用setState（要调用在componentWillReceiveProps）
+        更新发生前，一般很少调用
+
+    componetDidUpdate(prevProps,prevState)
+        更新完成后调用，有机会操作dom
+        判断是否发送网络请求
+        最适合发送网络请求
+ 卸载阶段
+    组件从dom中被卸载的过程
+    componentWillUnmount
+    做一些清理工作
+    定时器，取消一些网络请求，移除监听事件
+ 错误处理阶段
+    componentDidCatch(error.info) 
