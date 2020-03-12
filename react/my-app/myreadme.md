@@ -389,3 +389,35 @@ state props 影响UI显示
     定时器，取消一些网络请求，移除监听事件
  错误处理阶段
     componentDidCatch(error.info) 
+
+
+#8 受控组件与非受控组件
+只有表单才会引入此概念
+    受控组件
+      依赖状态，默认值实时映射到状态 state管理
+      必须使用onChange
+      双向绑定
+      优点：
+        便于数据处理，也符合react数据流的处理逻辑
+非受控组件
+      不受控制，获取dom，操作dom，通过（ref的方法实现）
+      优点： 容易与第三方组件结合  
+
+
+
+#9react中的事件和this
+ react中的事件
+    直接写在jsx中，onEventType（不能加载自定义的组件上） onChange OnBulr驼峰式命名（原生使用addevent..事件委托的方式进行）
+ 1.如何阻止事件调用？
+   handleClick = () => {
+     //return false; 这是不行的，
+     e.preventDefult();
+    this.setState({ isShow: !this.state.isShow })
+  } 
+
+事件监听this
+1.countructor bind绑定 推荐
+2.es6类字段 箭头函数 推荐
+3.runder中调用 不推荐
+4，runder中通过箭头函数调用， 不推荐
+事件传参

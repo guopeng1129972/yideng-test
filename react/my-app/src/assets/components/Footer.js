@@ -10,6 +10,8 @@ class Footer extends React.Component {
       name1: props.name + "www",
       count: 0,
       isShow: true,
+      username:"this is defult value",
+      textValue:"this is defult textvalue"
     }
     // this.handleAdd=this.handleAdd.bind(this);
     this.props.getChildData(this.state.count);
@@ -32,7 +34,15 @@ class Footer extends React.Component {
     }))
   }
   handleClick = () => {
+    
     this.setState({ isShow: !this.state.isShow })
+  }
+  handleChange = (e) => {
+    // e.preventDefult();
+    this.setState({username:e.target.value});
+  }
+  handleChangeText = (e) => {
+    this.setState({textValue:e.target.value});
   }
   render() {
     console.log("rander函数执行");
@@ -41,8 +51,10 @@ class Footer extends React.Component {
       <div>
         {this.state.isShow ? <h1>这是一个子组件 {name}</h1> : ""}
         <p>{this.state.name1}----{age}</p>
+        <input type="text" onChange={this.handleChange} value={this.state.username} />
         <button onClick={this.handleAdd} >点击加1{this.state.count}</button>
         <button onClick={this.handleClick} >点击切换显示子组件</button>
+        <textarea name="" id="" onChange={this.handleChangeText} defaultValue="this is defule value" value={this.textValue} cols="30" rows="10"></textarea>
       </div>
     )
   }
@@ -54,7 +66,7 @@ class Footer extends React.Component {
     }
     //重要，性能优化用
     shouldComponentUpdate(nextProps,nextState){
-
+        return true;
     }
     UNSAFE_componentWillUpdate(prevProps,prevState){
 
