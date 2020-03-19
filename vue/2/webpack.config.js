@@ -71,7 +71,7 @@ if (isDev) {
             errors: true,
         },
         hot: true,
-        open: true
+        // open: true
     },
         config.plugins.push(
             new webpack.HotModuleReplacementPlugin(),
