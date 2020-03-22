@@ -7,12 +7,15 @@
       @keyup.enter='addTodo'/>
       <Item 
       :todo="todo"
-      v-for="todo in todos"
+      v-for="todo in filteredTodos"
       :key="todo.id"
-      @click="addTodo"
       @del="delTodo"
       />
-      <Tab :filter="filter" :todos="todos"></Tab>
+      <Tab :filter="filter" 
+      :todos="todos"
+      @toggle='toggleFilter'
+      @clearAllCompleted='clearAllCompleted'
+      ></Tab>
   </section>
 
 </template>
@@ -20,20 +23,32 @@
 <script>
 import Item from './item.vue'
 import Tab from './tab.vue'
-let id='0';
+let id=0;
 export default {
   data(){
     return {
       todos:[],
-      filter:'all'
+      filter:'全部'
     }
   },
   components:{
     Item,
     Tab,
   },
+  computed:{
+    filteredTodos(){
+      if(this.filter === '全部'){
+        return this.todos
+      }
+      const completed = this.filter === '已完成';
+      return this.todos.filter(todo =>completed===todo.completed)
+    }
+  },
   methods:{
     addTodo(e){
+      if(e.target.value == ''){
+        return;
+      }
       this.todos.unshift({
         id:id++,
         content:e.target.value.trim(),
@@ -43,6 +58,12 @@ export default {
     },
     delTodo(id){
       this.todos.splice(this.todos.findIndex(todo => todo.id === id),1);
+    },
+    toggleFilter(state){
+      this.filter =state;
+    },
+    clearAllCompleted(){
+      this.todos=this.todos.filter(todo=>!todo.completed);
     }
   }
 }

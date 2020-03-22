@@ -11,7 +11,9 @@
             {{state}}
         </span>
         </span>
-        <span class="clear" @click="clearAllCompleted">清除已完成事项</span>
+        <span class="clear" 
+        @click="clearAllCompleted"
+        >清除已完成事项</span>
     </div>
 </template>
 
