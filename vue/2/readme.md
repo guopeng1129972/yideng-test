@@ -38,3 +38,5 @@ npm i babel-preset-env babel-plugin-transform-vue-jsx
 cnpm install --save-dev babel-loader
 
 npm i @babel/core babel-plugin-syntax-jsx
+
+npm i extract-text-webpack-plugin
