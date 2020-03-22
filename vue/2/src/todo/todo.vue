@@ -1,36 +1,49 @@
 <template>
-  <section class="real-up">
+  <section class="real-app">
     <input type="text"
       class="add-input"
       autofocus='autofocus'
       placeholder="干什么呢？"
       @keyup.enter='addTodo'/>
-      <Item :todo='todo'></Item>
-      <Tabs :filter="filter"></Tabs>
+      <Item 
+      :todo="todo"
+      v-for="todo in todos"
+      :key="todo.id"
+      @click="addTodo"
+      @del="delTodo"
+      />
+      <Tab :filter="filter" :todos="todos"></Tab>
   </section>
 
 </template>
 
 <script>
 import Item from './item.vue'
-import Tabs from './tab.vue'
+import Tab from './tab.vue'
+let id='0';
 export default {
   data(){
     return {
-      todo:{
-        id:0,
-        content:'123',
-        completed:false,
-      },
+      todos:[],
       filter:'all'
     }
   },
   components:{
     Item,
-    Tabs,
+    Tab,
   },
   methods:{
-    addTodo(){}
+    addTodo(e){
+      this.todos.unshift({
+        id:id++,
+        content:e.target.value.trim(),
+        completed:false
+      }),
+      e.target.value=''
+    },
+    delTodo(id){
+      this.todos.splice(this.todos.findIndex(todo => todo.id === id),1);
+    }
   }
 }
 </script>

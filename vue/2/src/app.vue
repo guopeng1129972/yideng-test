@@ -3,23 +3,22 @@
         <div id="cover"></div>
         <Header></Header>
         <Todo></Todo>
-        <Item></Item>
         <Footer></Footer>
     </div>
 </template>
+
 <script>
-import Header from './todo/header.vue'
-import Footer from './todo/footer.jsx'
-import Todo from './todo/todo.vue'
-import Item from './todo/item.vue'
+import Header from './todo/header.vue';
+import Footer from './todo/footer.jsx';
+import Todo from './todo/todo.vue';
+
 export default {
- components:{
-     Header,
-     Footer,
-     Todo,
-     Item,
- }
-};
+    components: {
+        Header,
+        Footer,
+        Todo,
+    }
+}
 </script>
 
 <style lang="stylus" scoped>

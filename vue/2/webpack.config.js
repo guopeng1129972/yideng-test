@@ -65,7 +65,7 @@ if (isDev) {
 
     config.devtool = '#cheap-module-eval-source-map';
     config.devServer = {
-        pont: 8000,
+        port: 8000,
         host: '0.0.0.0',
         overlay: {
             errors: true,
