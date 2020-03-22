@@ -9,7 +9,25 @@ su - 用户名
 (-和用户名之间有空格)
 
 ***************
+git fetch --all
+git reset --hard origin/master
+git pull //可以省略
+
+git fetch 指令是下载远程仓库最新内容，不做合并
+git reset 指令把HEAD指向master最新版本
 ***************
+.bashrc是一个隐藏的文件，要打开并修改该文件需要：
+(1）命令：ls -a 找到文件 .bashrc；
+(2) 命令 vim ~/.bashrc 进入到文件；
+(3) 直接按 i 键可以对文件进行修改， Esc + ：+ wq 退出并保存修改之后的文件
+(4) 命令 ：
+alias ll="ls -all"
+
+也有说法就是说配置, 方法一样，就看有什么了
+.bash_profile
+source ~/.bashrc
+ 更新 .bashrc
+
 ***************
 ***************
 ***************

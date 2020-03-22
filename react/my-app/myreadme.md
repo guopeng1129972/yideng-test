@@ -421,3 +421,53 @@ state props 影响UI显示
 3.runder中调用 不推荐
 4，runder中通过箭头函数调用， 不推荐
 事件传参
+传递 ID 索引
+1.bind
+<button onClick={this.handlebtnClick.bind(this,'传递的参数123')} >点击传递参数123</button>
+  handlebtnClick(params,event){
+    console.log('这是函数传递绑定的值',params)
+  }
+ 
+2.箭头函数
+<button onClick={(e)=>this.handlebtnnClick(e,'传递的参数456')} >点击传递参数456</button>
+ handlebtnnClick(event,params){
+    console.log('这是函数传递绑定的值',params)
+  }
+事件传递只能用这种方式，注意两种方式返回到函数中的数据接收的顺序是不一样的
+
+#10 ReactHook快速入门上
+
+什么是 ReactHook?
+
+16.8 新增特性
+  使用·state 赞函数组件中
+  hook
+  钩子 回调函数
+  使我们在非class的情况下，可以使用更多的react特性
+  完全可选
+  100%向后兼容
+  现在就可用
+  没有计划移除class，不用增加学习成本
+  对react概念没有影响， props, state context
+
+  为什么要用hook？
+  代码更加简洁
+  上手更加简单
+  react上手不容易，主要是？
+    1.生命周期难以理解，很难熟练使用
+    2.Redux 状态管理，概念非常多，难以理解，英文文档
+    3.高阶组件理解起来不容易，必须掌握
+  学习hook成本降低
+  1.生命周期可以不用学
+  2.高阶组件不用学
+  3.redux也不再是必需品，mobx上手非常容易
+开发体验非常好
+  可以让函数组件维护内部状态
+
+  单项数据流
+  和vue双向绑定不同 ，是自上而下的单向数据流绑定方式（react）
+  
+hook核心概念与应用
+
+
+

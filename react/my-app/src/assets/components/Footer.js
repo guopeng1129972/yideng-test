@@ -44,6 +44,12 @@ class Footer extends React.Component {
   handleChangeText = (e) => {
     this.setState({textValue:e.target.value});
   }
+  handlebtnClick(params,event){
+    console.log('这是函数传递绑定的值',params)
+  }
+  handlebtnnClick(event,params){
+    console.log('这是函数传递绑定的值',params)
+  }
   render() {
     console.log("rander函数执行");
     const { name, age } = this.props;
@@ -54,6 +60,8 @@ class Footer extends React.Component {
         <input type="text" onChange={this.handleChange} value={this.state.username} />
         <button onClick={this.handleAdd} >点击加1{this.state.count}</button>
         <button onClick={this.handleClick} >点击切换显示子组件</button>
+        <button onClick={this.handlebtnClick.bind(this,'传递的参数123')} >点击传递参数123</button>
+        <button onClick={(e)=>this.handlebtnnClick(e,'传递的参数456')} >点击传递参数456</button>
         <textarea name="" id="" onChange={this.handleChangeText} defaultValue="this is defule value" value={this.textValue} cols="30" rows="10"></textarea>
       </div>
     )
