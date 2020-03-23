@@ -9,12 +9,8 @@ su - 用户名
 (-和用户名之间有空格)
 
 ***************
-git fetch --all
-git reset --hard origin/master
-git pull //可以省略
 
-git fetch 指令是下载远程仓库最新内容，不做合并
-git reset 指令把HEAD指向master最新版本
+
 ***************
 .bashrc是一个隐藏的文件，要打开并修改该文件需要：
 (1）命令：ls -a 找到文件 .bashrc；
@@ -29,7 +25,31 @@ source ~/.bashrc
  更新 .bashrc
 
 ***************
+repo
+repo abandon gp
+repo forall -c git clean -df
+repo forall -c git reset --hard
+repo sync xxxx
+
+git
+git clean -df
+git reset --hard
+git pull
+
+git fetch --all
+git reset --hard origin/master
+git pull //可以省略
+
+git fetch 指令是下载远程仓库最新内容，不做合并
+git reset 指令把HEAD指向master最新版本
+
+svn
+svn co http://xxxxx
+svn cleanup
+svn up
 ***************
+console 调试
+
 ***************
 ***************
 ***************

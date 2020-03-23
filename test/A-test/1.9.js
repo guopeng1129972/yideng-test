@@ -2,7 +2,7 @@
 // 生以此类推。 不允许使用if switch等。（ 10 分）
 
 function fun(lv) {
-    if (99 <= lv && lv <= 100) {
+    if (90 <= lv && lv <= 100) {
         console.log("1");
     } else {
         console.log(Math.floor(10 - (lv / 10)))

@@ -466,8 +466,17 @@ state props 影响UI显示
 
   单项数据流
   和vue双向绑定不同 ，是自上而下的单向数据流绑定方式（react）
-  
-hook核心概念与应用
+  state/props 改变，会触发组件的重新渲染，如果是父组件，则会引起子组件的重新渲染
+  重新渲染
+  class render
+  function 整个函数重新执行
 
+  hook 就是函数组件 有状态的函数组件 state useState
+hook核心概念与应用
+useState
+  每次渲染，函数都会重新执行，函数执行完毕，所有的内存都会被释放，useState
+  在函数内部，创建一个当前函数组件的装填，提供一个修改状态的方法。
+  通过闭包实现
+  useState(0)=>[]
 
 
