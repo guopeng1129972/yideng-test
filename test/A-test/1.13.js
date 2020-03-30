@@ -12,3 +12,5 @@ var yideng = {
     }
 };
 yideng.method(fn, 1);
+
+//这是因为第二次的this是arguments的指向

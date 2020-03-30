@@ -1,14 +1,18 @@
+//数组方法，对象方法，类方法
 *************************************
-// filter,过滤函数
+// filter,过滤函数，数组方法
 const words = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];
-
 const result = words.filter(word => word.length > 6);
-
 console.log(result);
 // expected output: Array ["exuberant", "destruction", "present"]
 *************************************
-
+//类数组，字符串 转对象 数组方法
+var str='123';
+let newArr=Array.prototype.slice.call(str);
 *************************************
+//检测一个内容的类型 数组方法
+var el=true;
+Array.prototype.toString.call(el); //"[object Boolean]"
 *************************************
 *************************************
 *************************************

@@ -51,6 +51,10 @@ svn up
 console 调试
 
 ***************
+npm 清除node本地缓存
+rm -rf node_modules
+npm cache clean
+npm install
 ***************
 ***************
 ***************

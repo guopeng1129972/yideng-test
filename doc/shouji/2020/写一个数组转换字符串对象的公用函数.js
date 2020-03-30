@@ -6,3 +6,8 @@
 2 arr->obj
 3 obj->str
 */  
+
+var str='123';
+let newArr=Array.prototype.slice.call(str);
+var el=true;
+Array.prototype.toString.call(el); //"[object Boolean]"
