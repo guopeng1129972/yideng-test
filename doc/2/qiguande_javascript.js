@@ -32,3 +32,22 @@ console.log(arr);
 // 4
 // 5
 
+// !
+// “！”是逻辑与运算，并且可以与任何变量进行逻辑与将其转化为布尔值 
+// !!
+// “!!”则是逻辑与的取反运算，尤其后者在判断类型时代码简洁高效，
+// 省去了多次判断null、undefined和空字符串的冗余代码。
+function isie(params) {
+  if (document.all) {
+    return true;
+  } else {
+    return false;
+  }
+}
+function isIE() {
+  if (!!window.ActiveXObject || "ActiveXObject" in window) {
+    return true;
+  } else {
+    return false;
+  }
+}  

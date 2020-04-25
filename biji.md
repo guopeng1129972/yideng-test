@@ -23,7 +23,12 @@ alias ll="ls -all"
 .bash_profile
 source ~/.bashrc
  更新 .bashrc
-
+***************
+如果每次进shell 都需要更新才能生效 
+source ~/.bashrc
+可能是你选择的默认shell环境有关
+***************
+***************
 ***************
 repo
 repo abandon gp
