@@ -6,6 +6,8 @@
 1.直接遍历数组，判断前后的值是否相等，找到开始的位置与结束的位置，时间复杂度O(n)
 */
 
+let arr = [0, 1, 2, 3, 4, 5, 6, 6, 6, 6, 6, 7, 7, 8, 8, 8, 9, 9, 10]
+
 const findNum = (arr, num) => {
   let result = 0;
   for (let i = 0; i < arr.length; i++) {
@@ -44,19 +46,33 @@ function getNumOfk(data, k) {
     }
   }
   return 0
+}
 
-  function getLestIndex(data, k, start, end) {
-    if (start > end) { return -1 }
-    let mid = parseInt((start + end) / 2);
-    if (data[mid] === k) {
-      if (data[mid + 1] != k) {
-        return mid
-      } else {
-        return getLestIndex(data, k, mid + 1, end)
-      }
+function getFirstIndex(data, k, start, end) {
+  if (start > end) { return -1 }
+  let mid = parseInt((start + end) / 2);
+  if (data[mid] === k) {
+    if (data[mid - 1] != k) {
+      return mid
+    } else {
+      return getFirstIndex(data, k, start, mid - 1)
     }
-    else if (data[mid] < k) { return getLestIndex(data, k, start, mid - 1) }
-    else { return getLestIndex(data, k, mid - 1, end) }
-
   }
+  else if (data[mid] > k) { return getFirstIndex(data, k, start, mid - 1) }
+  else if (data[mid] < k) { return getFirstIndex(data, k, mid + 1, end) }
+}
+function getLestIndex(data, k, start, end) {
+  if (start > end) { return -1 }
+  let mid = parseInt((start + end) / 2);
+  if (data[mid] === k) {
+    if (data[mid + 1] != k) {
+      return mid
+    } else {
+      return getLestIndex(data, k, mid + 1, end)
+    }
+  }
+  else if (data[mid] > k) { return getLestIndex(data, k, start, mid - 1) }
+  else if (data[mid] < k) { return getLestIndex(data, k, mid + 1, end) }
+  else { return getLestIndex(data, k, mid - 1, end) }
+
 }
