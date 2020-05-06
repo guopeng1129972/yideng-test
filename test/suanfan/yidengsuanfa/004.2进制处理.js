@@ -5,7 +5,7 @@
 提示 先复习2进制的位运算
 */
 function getNumOneNum(number) {
-  let temp = number.toString(2)
+  let temp = number.parseInt(2)
   let len = temp.length;
   let result = 0;
   // 0110
@@ -18,6 +18,7 @@ function getNumOneNum(number) {
   if (temp[0] == "1") { result-- }
   return result
 }
+
 
 /*
 我的结果：
