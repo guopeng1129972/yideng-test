@@ -1,0 +1,7 @@
+/* 就是默写单词 用css 是因为需要对齐的插件*/
+  {
+  component: 组件;
+  render: 渲染;
+  generic: 泛型;
+  sort: 排序;
+}

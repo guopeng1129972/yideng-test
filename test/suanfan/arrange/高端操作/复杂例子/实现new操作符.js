@@ -12,5 +12,5 @@ function mynew(obj) {
 }
 
 function mynew2(obj) {
-
+  
 }

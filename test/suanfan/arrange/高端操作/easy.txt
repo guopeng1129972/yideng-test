@@ -14,6 +14,9 @@ let newArr=Array.prototype.slice.call(str);
 var el=true;
 Array.prototype.toString.call(el); //"[object Boolean]"
 *************************************
+//将一个方法的返回值的每一项去除空格，转成Number
+var count=readline()
+line = count.split(' ').map(Number)
 *************************************
 *************************************
 *************************************
