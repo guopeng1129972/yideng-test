@@ -18,7 +18,7 @@
 var findNumberInArray = (matrix, number) => {
   let i = matrix.length - 1; j = 0;
   const colLength = matrix[0].length || 0;
-  while (j < colLength && i < -1) {
+  while (j < colLength && i > -1) {
     if (matrix[i][j] == number) return true;
     if (matrix[i][j] < number) {
       j++;
@@ -34,4 +34,4 @@ const arr2 = [[11, 22, 33], [44, 55, 66], [74, 88, 98]];
 console.log(findNumberInArray(arr1, 4))
 console.log(findNumberInArray(arr2, 98))
 console.log(findNumberInArray(arr2, 33))
-console.Log(findNumberInArray(arr2, 34))
+console.log(findNumberInArray(arr2, 34))

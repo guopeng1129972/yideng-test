@@ -64,6 +64,9 @@ npm install
 /* jshint esversion: 6 */
 
 ***************
+node-sass 安装包错
+https://blog.csdn.net/qq_36069339/article/details/104207101
+npm i node-sass --sass_binary_site=https://npm.taobao.org/mirrors/node-sass/
 ***************
 ***************
 ***************

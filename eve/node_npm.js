@@ -27,6 +27,7 @@ npm install --save-dev karma
 npm 太慢
 
 npm config set registry http://registry.npm.taobao.org
+npm config get registry
 换了国内镜像，安装速度就很快了。
 
 在项目下安装运行环境
