@@ -16,6 +16,8 @@ console.log(...arr)
 for of 语法
 for of 实例=>链接
 **************
+如何抛出一个错误？
+if(a){throw new TypeError('err')}
 **************
 **************
 **************

@@ -1,7 +1,13 @@
-/* 就是默写单词 用css 是因为需要对齐的插件*/
+/* 单词表 就是默写单词 用css 是因为需要对齐的插件*/
   {
-  component: 组件;
-  render: 渲染;
-  generic: 泛型;
-  sort: 排序;
+  component  : 组件;
+  render     : 渲染;
+  generic    : 泛型;
+  sort       : 排序;
+  split      : 切割字符串;
+  argument   : 论据;
+  constructor: 构造器;
+  component  : 组件;
+  immediate  : 立即;
+  
 }
