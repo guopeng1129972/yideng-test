@@ -9,5 +9,7 @@
   constructor: 构造器;
   component  : 组件;
   immediate  : 立即;
+  extend     : 继承;
   
+
 }
