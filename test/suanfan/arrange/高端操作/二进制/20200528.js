@@ -84,7 +84,15 @@ b = a ^ b
 b = a ^ b ^ b = a ^ (b ^ b) = a ^ 0 = a;
 // es 6
 [a, b] = [b, a] */
+
+// js 的隐式转换
+var num_yinshi = '1';
+var num_yinshi1 = num_yinshi + '1'; //转字符串
+var num_yinshi2 = 1 + num_yinshi; //转数值
+var num_yinshi3 = !!1;//转布尔值
+
 // ~~ 用于数字取整
+
 
 
 
