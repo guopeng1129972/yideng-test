@@ -112,8 +112,14 @@ checkscope();//local scope
 显示原型：prototype
 隐式原型：__proto__
 prototype指向构造此函数的
-#如何实现一个new
-
+#9.如何实现一个new
+*/
+function myNew(obj) {
+    //有个问题，就是创建对象的时候，用了Object.crate(),
+    //这和new的
+    let newObj = Object.create(null);
+}
+/*
 说一下JS的继承方式
 
 什么是箭头函数，它和普通函数的区别
