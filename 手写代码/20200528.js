@@ -13,7 +13,7 @@ Function.prototype.mycall = function (context1) {
   const context = context1 || window;
   context.fn = this;
   let args = [];
-  for (let i in arguments) {
+  for (let i = 1, len = arguments.length; i < len; i++) {
     args.push('args[' + i + ']');
   }
   let result = eavl('context.fn(' + args + ')');
@@ -23,16 +23,17 @@ Function.prototype.mycall = function (context1) {
 // myaplly
 Function.prototype.myapply = function (context1, arr) {
   let context = Object.create(context1) || window;
-  context.fn = this;
+  let fn = symbol('fn');
+  context[fn] = this;
   let result;
   if (!arr) {
-    result = context.fn();
+    result = context[fn]();
   } else {
     let args = [];
-    for (let i = 1, len = arguments.length; i < len; i++) {
+    for (let i in arguments) {
       args.push('args[' + i + ']');
     }
-    result = eavl('context.fn(' + args + ')');
+    result = eavl('context[fn](' + args + ')');
   }
   delete context.fn;
   return result;
