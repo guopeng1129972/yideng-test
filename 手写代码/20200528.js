@@ -8,6 +8,10 @@ function clone(obj) {
   }
   return newObj;
 }
+
+let obj1 = { a: 1, b: 2 }
+console.log(clone(obj1))
+
 //call
 Function.prototype.mycall = function (context1) {
   const context = context1 || window;
@@ -16,14 +20,34 @@ Function.prototype.mycall = function (context1) {
   for (let i = 1, len = arguments.length; i < len; i++) {
     args.push('args[' + i + ']');
   }
-  let result = eavl('context.fn(' + args + ')');
+
+  let result = eval('context.fn(' + args + ')');
   delete context.fn;
   return result;
 };
+
+var value = 2;
+
+var obj = {
+  value: 1
+}
+
+function bar(name, age) {
+  console.log(this.value);
+  return {
+    value: this.value,
+    name: name,
+    age: age
+  }
+}
+
+bar.mycall(null); // 2
+
+console.log(bar.mycall(obj, 'kevin', 18));
 // myaplly
 Function.prototype.myapply = function (context1, arr) {
-  let context = Object.create(context1) || window;
-  let fn = symbol('fn');
+  let context = Object(context1) || window;
+  let fn = Symbol('fn');
   context[fn] = this;
   let result;
   if (!arr) {
@@ -31,14 +55,18 @@ Function.prototype.myapply = function (context1, arr) {
   } else {
     let args = [];
     for (let i in arguments) {
-      args.push('args[' + i + ']');
+      args.push('arguments[' + i + ']');
     }
-    result = eavl('context[fn](' + args + ')');
+    result = eval('context[fn](' + args + ')');
   }
   delete context.fn;
   return result;
 };
 // new
+function person(name, age) {
+  this.name = name
+  this.age = age
+}
 function myNew(obj) {
   return function () {
     let newObj = {
@@ -48,23 +76,26 @@ function myNew(obj) {
     return newObj;
   };
 }
+// console.log(myNew(person)('chen', 18))// {name: "chen", age: 18}
 //简版
-Function.prototype.mynew2 = function () {
+const myNew2 = function () {
   let obj = {};
   let _constructor = [].shift.call(arguments);
   obj.__proto__ = _constructor.prototype;
   let res = _constructor.apply(obj, arguments);
-  return res instanceof Object ? res : obj;
-}
-//简2
-Function.prototype.myNew3 = function () {
-  var obj = {},
-    Constructor = [].shift.call(arguments);
-  obj.__proto__ = Constructor.prototype;
-  var ret = Constructor.apply(obj, arguments);
   return typeof ret === 'object' ? ret : obj;
 }
-
+// console.log(myNew2(person, 'chen', 18))// {name: "chen", age: 18}
+//简2
+const myNew3 = function (func) {
+  let obj = {}
+  if (func.prototype !== null) {
+    obj.__proto__ = func.prototype
+  }
+  let result = func.apply(obj, [].slice.call(arguments, 1))
+  return result && typeof result === 'object' || typeof result === 'function' ? result : obj
+}
+// console.log(myNew3(person, 'chen', 18))// {name: "chen", age: 18}
 // 实现一个继承 es5
 function F(name, age) {
   this.name = name;
