@@ -1,0 +1,31 @@
+序号	题目
+1	react 实现一个全局的 dialog
+2	讲一下 webpack 原理， loader 和 plugin，你知道哪些模块化标准，说下 cjs 和 esmodule 的区别
+3	React 数据持久化有什么实践吗？
+4	请用算法实现，从给定的无序、不重复的数组data中，取出n个数，使其相加和为sum。并给出算法的时间/空间复杂度。(不需要找到所有的解，找到一个解即可)
+5	实现一个方法判断 html 中的标签是否闭合
+6	Redux 中异步的请求怎么处理
+7	React 新版本的生命周期有哪些？ 为什么去掉了那几个旧的生命周期
+8	React 高阶组件 renderprops hooks 有什么区别，为什么要不断迭代
+9	V8 机制讲解
+10	什么是深拷贝，和浅拷贝有什么区别，动手实现一个深拷贝
+11	介绍下 webpack，并说下 Webpack 的构建流程
+12	文件上传如何做断点续传
+13	谈谈闭包优缺点以及应用
+14	大数计算如何实现
+15	说下 tree-shaking 的原理
+16	说一下 React setState 原理
+17	说一下 React diff 算法
+18	手写实现 Array.flat()
+19	React key 是干嘛用的 为什么要加？key 主要是解决哪一类问题的
+20	PWA 是什么？对 PWA 有什么了解
+21	mysql 和 mongodb 区别
+22	Webp 格式的图片怎么生成，使用有什么兼容性问题，如何怎么解决
+23	箭头函数和普通函数的区别
+24	Css 如何画出一个扇形，动手实现下
+25	说一下盒子模型，以及标准情况和 IE 下的区别 
+26	Umi 和 dva 分别是干嘛用的？为什么会有 umi dva 的出现？使用起来有什么不方便的地方吗？
+27	说一下 React 生命周期，以及都有哪些改变
+28	使用过 mobox 吗？mobox 和 redux 有什么区别？
+29	CDN 是什么？描述下 CDN 原理？为什么要用 CDN?
+30	说下 webpack 的 loader 和 plugin 的区别，都使用过哪些 loader 和 plugin
