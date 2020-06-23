@@ -1,4 +1,3 @@
-序号	题目
 1	react 实现一个全局的 dialog
 2	讲一下 webpack 原理， loader 和 plugin，你知道哪些模块化标准，说下 cjs 和 esmodule 的区别
 3	React 数据持久化有什么实践吗？

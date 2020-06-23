@@ -11,7 +11,7 @@ function add(a) {
 add(1)(2)(3)
 
 //柯里化
-
+localStorage
 function add2(...arg) {
   var a = [...arg];
   _add = function (...innerArg) {
