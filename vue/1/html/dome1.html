@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>第一个vue程序</title>
+</head>
+
+<body>
+  <div id="app">
+    {{message}}
+  </div>
+
+  <script src="../lib/vue.js"></script>
+  <script>
+    const data1 = {
+      message: "this is message",
+    }
+    const app = new Vue({
+      el: "#app",
+      data: data1,
+    })
+  </script>
+</body>
+
+</html>
