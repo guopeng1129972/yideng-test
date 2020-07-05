@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>第一个vue应用</title>
+  <script src="./lib/vue.js"></script>
+</head>
+
+<body>
+
+  <div id="app">
+    hello world =>
+    {{msg}}
+    <div>
+      {{msg1}}
+    </div>
+  </div>
+</body>
+<script>
+  let arr = 'test'
+  let app = new Vue({
+    el: '#app',
+    data: {
+      msg: 'hello vue',
+      another: 'another val'
+    },
+    watch: {
+      msg: function (newVal, oldVal) {
+        console.log('newVal is ' + newVal)
+        console.log('oldVal is ' + oldVal)
+      }
+    },
+    computed: {
+      msg1: function () {
+        return 'computed: ' + this.msg + ',' + this.another + ',' + arr
+      }
+    }
+  })
+</script>
+
+
+</html>
