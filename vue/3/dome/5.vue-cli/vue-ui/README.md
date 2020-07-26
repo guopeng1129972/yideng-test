@@ -1,4 +1,4 @@
-# hello-ui
+# vue-ui
 
 ## Project setup
 ```
